@@ -12,5 +12,5 @@ $mesas->setId_mesa($_GET['id_mesa']);
 $mesasDAO = new MesasDao(); 
 $mesasDAO->newReservar($_GET['id_mesa']);
 
-
+ 
 ?>

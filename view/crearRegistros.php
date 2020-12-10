@@ -57,26 +57,46 @@ require_once '../controller/validarConexion.php';
                 </div>
             </div>
         </header>
-	</div>
+	</div><br><br><br><br>
 	<!-----------------------------------------------FIN MENU----------------------------------------->
 
 	<!-----------------------------------------------INICIO BANNER----------------------------------------->
-    <div id="banner-2" class="banner-2 full-screen-mode parallax">
-        <div class="container pr">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="banner-static">
-                    <div class="banner-text">
-                        <div class="banner-cell">
-                            <h1>Reserva mesa en nuestro restaurante <span class="typer" id="some-id" data-delay="200" data-delim=":" data-words="Friends:Family:Officemates" data-colors="red"></span><span class="cursor" data-cursorDisplay="_" data-owner="some-id"></span></h1>
-                            <h2>Sala <?php echo $_GET['id']; ?> <span class="typer" id="some-id" data-delay="200" data-delim=":" data-words="Friends:Family:Officemates" data-colors="red"></span><span class="cursor" data-cursorDisplay="_" data-owner="some-id"></span></h2>
-                            <?php
-                                require_once './showTables.php';
-                            ?> 
-                        </div>
-                    </div>
-                </div>
+    <!-- Para los registros hacer un modal para crear uno
+        Tambien mostrar todos los usuarios con boton de eliminar y de modificar
+        La opcion de modificar abre otro modal
+     -->
+    <div style="text-align: center; color: white;">
+        <h1>CREAR REGISTRO</h1>
+        <form action="../controller/registrarController.php" method="POST" class="formulario" id="formulario" onsubmit="return validacionForm()">
+        <div>	<!-- Campo: NOM -->
+            <label for="nom">Nombre</label>
+            <div>
+            <input type="text" name="name" id="name" placeholder="Nombre...">
             </div>
         </div>
+        <div>	<!-- Campo: EMAIL -->
+            <label for="correo">Email</label>
+            <div>
+            <input type="text" name="email" id="email" placeholder="Email...">
+            </div>
+        </div>
+        <div>	<!-- Campo: PASSWORD 1 -->
+            <label for="passwd">Password</label>
+            <div>
+            <input type="password" name="password" id="password">
+            </div>
+        </div>
+        <div>	<!-- Campo: PASSWORD 2 -->
+            <label for="passwd2">Password 2</label>
+            <div>
+            <input type="password" name="password2" id="password2">
+            </div>
+        </div>
+       
+        <div> <!-- Boton de enviar -->
+            <button type="submit">Enviar</button>
+        </div>
+        </form>
     </div>
 <!-----------------------------------------------FIN DIV MESAS----------------------------------------->
 

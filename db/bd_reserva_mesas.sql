@@ -3,8 +3,15 @@ USE bd_reserva_mesa;
 
 CREATE TABLE tbl_camareros (
     id_camarero int (11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    Name varchar (100) NOT NULL,
     Email varchar (255) NOT NULL,
-    Passwd varchar (50) NOT NULL
+    Passwd varchar (50) NOT NULL,
+    Profile int (11) NOT NULL
+);
+
+CREATE TABLE tbl_perfil (
+    id int (11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    Name varchar (100) NOT NULL
 );
 
 CREATE TABLE tbl_salas (
@@ -47,9 +54,18 @@ alter table tbl_incidencias
 add constraint fk_id_inc foreign key (id_mesa)
 references tbl_mesas (id_mesa);
 
-INSERT INTO tbl_camareros (Email,Passwd)	
-VALUES	("admin@admin.com","81dc9bdb52d04dc20036dbd8313ed055"),
-("random@random.com","81dc9bdb52d04dc20036dbd8313ed055");
+alter table tbl_camareros
+add constraint fk_id_perfil foreign key (Profile)
+references tbl_perfil (id);
+
+INSERT INTO tbl_perfil (id,Name)	
+VALUES	("1","Camarero"),
+("2","Mantenimiento"),
+("3","Administrador");
+
+INSERT INTO tbl_camareros (Name,Email,Passwd,Profile)	
+VALUES	("Admin","admin@admin.com","81dc9bdb52d04dc20036dbd8313ed055","1"),
+("Random","random@random.com","81dc9bdb52d04dc20036dbd8313ed055","3");
 
 INSERT INTO tbl_salas (num_mesas,num_sillas)	
 VALUES	("6","24"),
