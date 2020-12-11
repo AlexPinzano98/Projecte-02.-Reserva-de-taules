@@ -11,7 +11,6 @@
         $incDAO= new IncidenciasDAO();
 
         $incDAO->actualizarTablaInc($inc);
-        
     }
 
     header ('Location: ../view/incidencias.php'); 

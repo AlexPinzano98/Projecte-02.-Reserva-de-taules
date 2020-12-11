@@ -1,6 +1,3 @@
-<?php
-require_once '../controller/validarConexion.php';
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,38 +64,41 @@ require_once '../controller/validarConexion.php';
      -->
     <div style="text-align: center; color: black;">
         <h1>CREAR REGISTRO</h1>
-        <form action="../controller/registrarController.php" method="POST" class="formulario" id="formulario" onsubmit="return validacionForm()">
-        <div>	<!-- Campo: NOM -->
-            <label for="nom">Nombre</label>
+        <form action="../controller/registrarReservaController.php" method="POST" class="formulario" id="formulario" onsubmit="return validacionForm()">
+        <div>	<!-- Campo: FECHA -->
+            <label for="fecha">Fecha</label>
             <div>
-            <input type="text" name="name" id="name" placeholder="Nombre...">
+            <input type="date" name="fecha" id="fecha">
             </div>
         </div>
-        <div>	<!-- Campo: EMAIL -->
-            <label for="correo">Email</label>
+        <div>	<!-- Campo: Nº PERSONAS -->
+            <label for="num">Nº PERSONAS</label>
             <div>
-            <input type="email" name="email" id="email" placeholder="Email...">
+            <input type="number" name="capacidad" id="capacidad" max="6" min="1">
             </div>
         </div>
-        <div>	<!-- Campo: PASSWORD 1 -->
-            <label for="passwd">Password</label>
+        <div>	<!-- Campo: Hora -->
+            <label for="hora">Hora de la reserva</label>
             <div>
-            <input type="password" name="password" id="password">
+            <select name="hora">
+                <option value="12:00" selected>12:00</option> 
+                <option value="13:00">13:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="20:00">20:00</option> 
+                <option value="21:00">21:00</option>
+                <option value="22:00">22:00</option>
+                <option value="23:00">23:00</option>
+            </select>
             </div>
         </div>
-        <div>	<!-- Campo: PASSWORD 2 -->
-            <label for="passwd2">Password 2</label>
+        <div>	<!-- Campo: Sala -->
+            <label for="sala">Sala</label>
             <div>
-            <input type="password" name="password2" id="password2">
-            </div>
-        </div>
-        <div>	<!-- Campo: Profile -->
-            <label for="perfil">Perfil (1-3)</label>
-            <div>
-            <select name="perfil">
-                <option value="1" selected>1 - Camarero</option> 
-                <option value="2">2 - Mantenimiento</option>
-                <option value="3">3 - Administrador</option>
+            <select name="sala">
+                <option value="1" selected>1</option> 
+                <option value="2">2</option>
+                <option value="3">3</option>
             </select>
             </div>
         </div>

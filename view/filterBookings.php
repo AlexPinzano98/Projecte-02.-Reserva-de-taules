@@ -59,8 +59,8 @@ require_once '../controller/validarConexion.php';
         </header>
 	</div>
     <!-----------------------------------------------FIN MENU----------------------------------------->
-    	<!-----------------------------------------------INICIO BANNER----------------------------------------->
-        <div id="banner-3" class="banner-3 full-screen-mode parallax">
+    <!-----------------------------------------------INICIO BANNER----------------------------------------->
+    <div id="banner-3" class="banner-3 full-screen-mode parallax">
         <div class="container pr">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="banner-static">
