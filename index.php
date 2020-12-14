@@ -7,8 +7,7 @@
 	<script src="./js/code.js"></script>
 	<link rel="stylesheet" type="text/css" href="./css/index.css">
 </head>
-<body style="background-color: #666666;">
-	
+<!-- <body style="background-color: #666666;">
 	<div class="principal-form">
 		<div class="content-form">
 			<div class="row-form">
@@ -47,8 +46,19 @@
 				</div>
 			</div>
 		</div>
-	</div>
-
+	</div> 
+</body>-->
+<body
+	<ul>
+		<li>
+			<a href="./view/Administrador/adminHome.php">Admin HOME</a></li>
+		<li>
+			<a href="./view/Administrador/adminRegistros.php">Admin Registro</a>
+		</li>
+		<li>
+			<a href="./view/Camarero/buscarReserva.php">Reservar Mesa</a>
+		</li>
+	</ul>
 </body>
 </html>
 
