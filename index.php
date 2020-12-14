@@ -48,7 +48,8 @@
 		</div>
 	</div> 
 </body>-->
-<body
+<body>
+	<p> pene </p>
 	<ul>
 		<li>
 			<a href="./view/Administrador/adminHome.php">Admin HOME</a></li>
