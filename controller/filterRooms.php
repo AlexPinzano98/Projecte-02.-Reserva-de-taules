@@ -1,6 +1,6 @@
 <?php
-require_once '../model/salas.php';
-require_once '../model/salasDAO.php'; 
+require_once '../../model/salas.php';
+require_once '../../model/salasDAO.php'; 
 
 if(isset($_POST['ubicacion']) || isset($_POST['num_mesas'])){        
 

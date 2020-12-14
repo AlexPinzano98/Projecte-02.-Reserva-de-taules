@@ -46,7 +46,6 @@
                             <ul class="nav navbar-nav navbar-right">
                                     <li><a href="adminHome.php">HOME</a></li>
                                     <li><a href="adminRegistros.php">REGISTRAR</a></li>
-                                    <li><a href="incidencias.php">Incidencias</a></li>
                                     <li><a href="../../services/logOut.php">Cerrar Sesion</a></li>
                                 </ul>
                             </div>

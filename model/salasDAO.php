@@ -3,7 +3,7 @@ class SalasDao{
     private $pdo;
 
     public function __construct(){
-        include '../services/conexion.php';
+        include '../../services/conexion.php';
         $this->pdo=$pdo;
     }
 

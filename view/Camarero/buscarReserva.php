@@ -18,9 +18,7 @@
     <script src="../js/changeImg.js"></script>
 </head>
 <body id="site-header" style="	background:url(../img/pollo.gif) no-repeat center top;
-	background-attachment:fixed;
-	background-size:cover;
-	height:100vh;
+	background-attachment:fixed;	background-size:cover;	height:100vh;
 	min-height:100%;">
 	<div id="site-header">
         <header id="header" class="header-block-top">
@@ -44,8 +42,8 @@
                             <div id="navbar" class="navbar-collapse collapse">
                                 <ul class="nav navbar-nav navbar-right">
                                     <li><a href="buscarReserva.php">Buscar reserva</a></li>
+                                    <li><a href="home.php">HOME</a></li>
                                     <li><a href="filterBookings.php">Filtrar Mesa</a></li>
-                                    <li><a href="incidencias.php">Incidencias</a></li>
                                     <li><a href="../../services/logOut.php">Cerrar Sesion</a></li>
                                 </ul>
                             </div>
