@@ -22,7 +22,7 @@ class MesasDao{
         $sentencia->bindValue(2,$id_mesa);
         $sentencia->execute();
         
-        header("Location: ../view/mostrarMesas.php?id={$_GET['id_sala']}");
+        header("Location: ../view/Camarero/mostrarMesas.php?id={$_GET['id_sala']}");
     }
 
     public function newAliberar($id_mesa){
@@ -39,7 +39,7 @@ class MesasDao{
         $sentencia->bindValue(2,$id_mesa);
         $sentencia->execute();
 
-        header("Location: ../view/mostrarMesas.php?id={$_GET['id_sala']}");
+        header("Location: ../view/Camarero/mostrarMesas.php?id={$_GET['id_sala']}");
     }
 
     public function deleteUser($id){

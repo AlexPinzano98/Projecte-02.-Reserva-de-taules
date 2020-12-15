@@ -7,7 +7,7 @@ $admin = new Camarero($_POST['email'], md5($_POST['psswd']));
 $adminDAO = new CamareroDAO();
 if($adminDAO->login($admin)){
   //echo 'Login realizado con exito, iniciamos sesion <br>'; 
-  header('Location: ../view/home.php');
+  header('Location: ../view/Administrador/adminRegistros.php');
 }else {
   header('Location: ../index.php');
 }
