@@ -1,6 +1,3 @@
-<?php
-require_once '../controller/validarConexion.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,13 +9,13 @@ require_once '../controller/validarConexion.php';
 
     <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
 
-    <link rel="stylesheet" href="../css/home.css">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="../../css/home.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/form.css">
     
 </head>
 
-<body style="	background:url(../img/bg_filtro.jpg) no-repeat center top;
+<body style="	background:url(../../img/bg_filtro.jpg) no-repeat center top;
 	background-attachment:fixed;
 	background-size:cover;
 	height:100vh;
@@ -47,10 +44,8 @@ require_once '../controller/validarConexion.php';
                             </div>
                             <div id="navbar" class="navbar-collapse collapse">
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li><a href="home.php">Inicio</a></li>
-                                    <li><a href="filterBookings.php">Filtrar Mesa</a></li>
                                     <li><a href="incidencias.php">Incidencias</a></li>
-                                    <li><a href="../services/logOut.php">Cerrar Sesion</a></li>
+                                    <li><a href="../../services/logOut.php">Cerrar Sesion</a></li>
                                 </ul>
                             </div>
                         </nav>
@@ -69,7 +64,7 @@ require_once '../controller/validarConexion.php';
                         <div class="banner-cell">
                             <h4 class="h4-filtro">Incidencias Restaurante</h4><br><br>
                             <div class="formulario1">
-                                <form action="../controller/actualizarIncidencias.php" method="POST" class="form1">
+                                <form action="../../controller/actualizarIncidencias.php" method="POST" class="form1">
                                     <div class="row">
                                         <div class="col-25">
                                             <label for="id_mesa">Número de la Mesa</label>

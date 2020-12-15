@@ -13,5 +13,5 @@
         $incDAO->actualizarTablaInc($inc);
     }
 
-    header ('Location: ../view/incidencias.php'); 
+    header ('Location: ../view/Mantenimiento/incidencias.php'); 
  

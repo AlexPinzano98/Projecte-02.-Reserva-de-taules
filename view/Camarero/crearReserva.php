@@ -1,8 +1,8 @@
-<?php 
+<?php  
 // Aqui registranos al empleado
 require_once "../../controller/searchReserva.php";
-?>
-<!DOCTYPE html>
+?> 
+<!DOCTYPE html> 
 <html>
 <head>
 	<title>PROJECTE 1 | RESERVA DE TAULES</title>
@@ -48,9 +48,9 @@ require_once "../../controller/searchReserva.php";
                             <div id="navbar" class="navbar-collapse collapse">
                                 <ul class="nav navbar-nav navbar-right">
                                     <li><a href="buscarReserva.php">Buscar reserva</a></li>
+                                    <li><a href="home.php">HOME</a></li>
                                     <li><a href="filterBookings.php">Filtrar Mesa</a></li>
-                                    <li><a href="incidencias.php">Incidencias</a></li>
-                                    <li><a href="../services/logOut.php">Cerrar Sesion</a></li>
+                                    <li><a href="../../services/logOut.php">Cerrar Sesion</a></li>
                                 </ul>
                             </div>
                         </nav>

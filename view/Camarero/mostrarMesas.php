@@ -1,5 +1,5 @@
 <?php
-require_once '../../controller/validarConexion.php';
+//require_once '../../controller/validarConexion.php';
 ?>
 <!DOCTYPE html>
 <html>

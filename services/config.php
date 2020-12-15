@@ -2,5 +2,5 @@
 define("SERVIDOR","localhost");
 define("USUARIO","root");
 define("PASSWORD","");
-define("BD","bd_reserva_mesa");
+define("BD","2021_pinzanoalex");
 ?>

@@ -6,6 +6,6 @@
  $incidencia = new MesasDao();
  $incidencia->deleteUser($id_mesa);
 
- header('Location: ../view/incidencias.php');
+ header('Location: ../view/Mantenimiento/incidencias.php');
 
 ?>

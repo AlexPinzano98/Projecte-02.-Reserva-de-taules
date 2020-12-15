@@ -1,5 +1,5 @@
 <?php   
-require_once '../model/incidenciasDAO.php';
+require_once '../../model/incidenciasDAO.php';
 $incidenciasVar= new incidenciasDAO;
 // print_r($filter);
 
@@ -31,7 +31,7 @@ foreach($incidenciasVar->mostrarTablaInc() as $incid){
                 echo "<td class='text-center'>{$incid['id_mesa']}</td>";
                 echo "<td class='text-center'>{$incid['descrip']}</td>";
                 echo "<td class='text-center'>{$incid['dispo']}</td>";
-                echo "<td class='text-center'><a href='../controller/eliminarController.php?id_mesa={$incid['id_mesa']} '>Eliminar</a></td>";                        
+                echo "<td class='text-center'><a href='../../controller/eliminarController.php?id_mesa={$incid['id_mesa']} '>Eliminar</a></td>";                        
         echo "</tr>";            
 };
 

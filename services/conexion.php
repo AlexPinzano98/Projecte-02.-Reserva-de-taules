@@ -1,7 +1,7 @@
 <?php
 include 'config.php';
 try{
-   $conexion=mysqli_connect('localhost','root','','bd_reserva_mesa');
+   $conexion=mysqli_connect('localhost','root','','2021_pinzanoalex');
    $servidor="mysql:dbname=".BD.";host=";SERVIDOR;
    $pdo=new PDO($servidor,USUARIO,PASSWORD,array(PDO::MYSQL_ATTR_INIT_COMMAND=>"SET NAMES UTF8"));
    //echo "<script> alert('conexion establecida') </script>";

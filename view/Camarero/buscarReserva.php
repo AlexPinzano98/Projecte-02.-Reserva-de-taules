@@ -10,12 +10,10 @@
     <!-- Site Metas -->
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content=""> 
 
 	<link rel="stylesheet" href="../../css/home.css">
 	<link rel="stylesheet" href="../../css/bootstrap.min.css">
-
-    <script src="../js/changeImg.js"></script>
 </head>
 <body id="site-header" style="	background:url(../img/pollo.gif) no-repeat center top;
 	background-attachment:fixed;	background-size:cover;	height:100vh;

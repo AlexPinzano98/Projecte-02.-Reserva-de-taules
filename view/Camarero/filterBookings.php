@@ -16,7 +16,7 @@
     <script src="../../js/limitAlertBookings.js"></script>
 </head>
 
-<body style="	background:url(../img/bg_filtro.jpg) no-repeat center top;
+<body style="	background:url(../../img/bg_filtro.jpg) no-repeat center top;
 	background-attachment:fixed;
 	background-size:cover;
 	height:100vh;

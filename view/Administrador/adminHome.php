@@ -1,10 +1,6 @@
 <?php
-include '../../services/conexion.php';
-$query= "SELECT * FROM tbl_camareros";
-$sentencia= $pdo->prepare($query);
-$sentencia->execute();
-$empleado = $sentencia->fetchAll();
-print_r($empleado);
+require_once "../../controller/recuperarEmpleado.php";
+//print_r($empleado);
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,13 +16,13 @@ print_r($empleado);
     <meta name="description" content="">
     <meta name="author" content="">
 
-	<!-- <link rel="stylesheet" href="../../css/home.css"> -->
+	<link rel="stylesheet" href="../../css/home.css">
 	<link rel="stylesheet" href="../../css/bootstrap.min.css">
 
     <script src="../../js/changeImg.js"></script>
     <script src="../../js/modal.js"></script>
 </head>
-<body id="site-header" style="	background:url(../../img/pollo.gif) no-repeat center top;
+<body id="site-header" style="	background:url(../img/pollo.gif) no-repeat center top;
 	background-attachment:fixed;
 	background-size:cover;
 	height:100vh;
@@ -81,10 +77,14 @@ print_r($empleado);
             <p>Email: <b><?php echo $emp['Email']?></b></p>
             <p>ROL: <b><?php echo $emp['Profile']?></b></p>
             <form action="../../controller/delEmpleado.php" method="POST">
-                <input type="hidden" name="id_emp" value="<?php echo $emp['id_camarero']?>">
+                <input type="hidden" name="id_emp" value="<?php echo $emp['id_empleado']?>">
                 <button class="delete">Eliminar</button>
             </form>
-            <button class="update" onclick="openModal('<?php echo $emp['id_camarero']?>','<?php echo $emp['Name'];?>','<?php echo $emp['Email']?>')" >Modificar</button>
+            <button class="update" onclick="openModal('<?php echo $emp['id_empleado']?>','<?php echo $emp['Name'];?>','<?php echo $emp['Email']?>','<?php echo $emp['Passwd']?>','<?php echo $emp['Profile']?>')" >Modificar</button>
+            <form action="../../controller/blocEmpleado.php" method="POST">
+                <input type="hidden" name="id_emp" value="<?php echo $img['path']?>">
+                <button class="button">Status</button>
+            </form>
         </div>
         <?php
         }
@@ -103,10 +103,16 @@ print_r($empleado);
             <div class="modal-body">
                 <form action="../../controller/updateEmpleado.php" method="POST">
                     <input id="id" name="id" type="hidden" value=""> <br>
-                    Name:
+                    Name: <br>
                     <input id="name" name="name" type="text" value=""> <br>
-                    Email:
+                    Email: <br>
                     <input id="correo" name="correo" type="email" value=""> <br>
+                    Rol: <br>
+                    <select id="perfil" name="perfil">
+                        <option id="camarero" value="1">Camarero</option>
+                        <option id="mantenimiento" value="2">Mantenimiento</option>
+                        <option id="administrador" value="3">Administrador</option>
+                    </select> <br>
                     <button type="submit">UPDATE</button>
                 </form>
             </div>
