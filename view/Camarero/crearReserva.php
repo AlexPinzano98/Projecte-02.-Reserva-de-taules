@@ -2,7 +2,7 @@
 // Aqui registranos al empleado
 require_once "../../controller/searchReserva.php";
 ?> 
-<!DOCTYPE html> 
+<!DOCTYPE html>  
 <html>
 <head>
 	<title>PROJECTE 1 | RESERVA DE TAULES</title>
@@ -21,7 +21,7 @@ require_once "../../controller/searchReserva.php";
 
     <script src="../js/changeImg.js"></script>
 </head>
-<body id="site-header" style="	background:url(../img/pollo.gif) no-repeat center top;
+<body id="site-header" style="	background:url(../../img/pollo.gif) no-repeat center top;
 	background-attachment:fixed;
 	background-size:cover;
 	height:100vh;
@@ -58,7 +58,7 @@ require_once "../../controller/searchReserva.php";
                 </div>
             </div>
         </header>
-	</div><br><br><br><br>
+	</div>
 	<!-----------------------------------------------FIN MENU----------------------------------------->
 
 	<!-----------------------------------------------INICIO BANNER----------------------------------------->
@@ -67,14 +67,42 @@ require_once "../../controller/searchReserva.php";
         La opcion de modificar abre otro modal
      -->
     <div style="text-align: center; color: black;">
-        <h1>MOSTRAR RESERVAS DISPONIBLES</h1>
-        <!-- 
-            Un form para poder clicar en cada mesa y hacer una reserva para esa hora
-            form: newReserva.php
+        <h1>MESAS DISPONIBLES</h1>
+        <div style="background-color: cyan;">
+        <p>Dia: <?php echo $fecha ?></p>
+        <p>Capacidad: <?php echo $capacidad ?></p>
+        <p>Hora: <?php echo $hora ?></p>
+        <p>Sala: <?php echo $sala ?></p>
+    </div>
+    <?php
+    foreach ($mesas as $mesa) {
+    $id = $mesa['id_mesa'];
+    // Comprobar por cada mesa si existe reserva
+    $query = "SELECT * FROM tbl_reservas 
+    WHERE dia_reserva = '$fecha'
+    AND id_mesa = '$id'
+    AND hora_entrada_reserva = '$hora' ";
 
-            // Hacer un for para recorrer todas las mesas
-            // En cada mesa comprobar si esta disponible
-         -->
+    $sentencia = $pdo->prepare($query);
+    $sentencia->execute();
+    $reservas = $sentencia->rowCount();
+
+    // Comprovamos si no existen reservas
+    if ($reservas == 0) {    ?>
+    <div>
+        <form action='../../controller/hacerReserva.php' method='POST'>
+            <p>Mesa disponible:<?php echo $mesa['id_mesa'] ?>  </p>
+            <p>Capacidad: <?php echo $mesa['num_sillas_mesa'] ?> </p>
+            <img src="../../img/mesa1.png" style="width: 15%;" /> <br>
+            <input id='fecha' name='fecha' type='hidden' value='<?php echo $fecha ?>'> 
+            <input id='hora' name='hora' type='hidden' value='<?php echo $hora ?>'> 
+            <input id='id_mesa' name='id_mesa' type='hidden' value='<?php echo $mesa['id_mesa'] ?>'>     
+            <button type='submit'>RESERVAR</button>
+        </form>
+    </div>
+    <?php } 
+    }
+    ?> 
     </div>
 <!-----------------------------------------------FIN DIV MESAS----------------------------------------->
 

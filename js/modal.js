@@ -1,7 +1,7 @@
 window.onload=function(){ // Definimos la variable modal al cargar la pagina
   modal = document.getElementById("myModal");
 }
-function openModal(id,name,correo,passwd,perfil){ // Abrir el modal al hacer click
+function openModal(id,name,correo,perfil){ // Abrir el modal al hacer click
   modal.style.display = "block";
   document.getElementById("id").value = id;
   document.getElementById("name").value = name;
@@ -20,6 +20,9 @@ function openModal(id,name,correo,passwd,perfil){ // Abrir el modal al hacer cli
       break;
   }
 
+}
+function abrirModal(){ // Abrir el modal al hacer click
+  modal.style.display = "block";
 }
 function closeModal(){ // Cerrar el modal al hacer click en la X
   modal.style.display = "none";

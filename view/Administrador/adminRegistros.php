@@ -11,7 +11,7 @@
     <!-- Site Metas -->
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content=""> 
 
 	<link rel="stylesheet" href="../../css/home.css">
 	<link rel="stylesheet" href="../../css/bootstrap.min.css">
@@ -43,9 +43,10 @@
                                 </div>
                             </div>
                             <div id="navbar" class="navbar-collapse collapse">
-                            <ul class="nav navbar-nav navbar-right">
+                                <ul class="nav navbar-nav navbar-right">
                                     <li><a href="adminHome.php">HOME</a></li>
-                                    <li><a href="adminRegistros.php">REGISTRAR</a></li>
+                                    <li><a href="adminRegistros.php">REGISTROS</a></li>
+                                    <li><a href="adminRecursos.php">RECURSOS</a></li>
                                     <li><a href="../../services/logOut.php">Cerrar Sesion</a></li>
                                 </ul>
                             </div>

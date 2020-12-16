@@ -22,7 +22,7 @@ require_once "../../controller/recuperarEmpleado.php";
     <script src="../../js/changeImg.js"></script>
     <script src="../../js/modal.js"></script>
 </head>
-<body id="site-header" style="	background:url(../img/pollo.gif) no-repeat center top;
+<body id="site-header" style="	background:url(../../img/pollo.gif) no-repeat center top;
 	background-attachment:fixed;
 	background-size:cover;
 	height:100vh;
@@ -49,7 +49,8 @@ require_once "../../controller/recuperarEmpleado.php";
                             <div id="navbar" class="navbar-collapse collapse">
                                 <ul class="nav navbar-nav navbar-right">
                                     <li><a href="adminHome.php">HOME</a></li>
-                                    <li><a href="adminRegistros.php">REGISTRAR</a></li>
+                                    <li><a href="adminRegistros.php">REGISTROS</a></li>
+                                    <li><a href="adminRecursos.php">RECURSOS</a></li>
                                     <li><a href="../../services/logOut.php">Cerrar Sesion</a></li>
                                 </ul>
                             </div>
