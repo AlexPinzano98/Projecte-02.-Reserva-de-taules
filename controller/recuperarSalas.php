@@ -6,5 +6,5 @@ $sentencia= $pdo->prepare($query);
 $sentencia->execute();
 $salas = $sentencia->fetchAll();
 echo "<br><br><br><br><br><br>";
-print_r($salas);
+//print_r($salas);
 ?>

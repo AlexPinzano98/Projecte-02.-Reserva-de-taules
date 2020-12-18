@@ -34,7 +34,7 @@ class CamareroDao{
 
                     if($numRow==1){
                         session_start();
-                        $_SESSION['user'] = $email;
+                        $_SESSION['camarero'] = $email;
                         switch ($profile[0]) { // Segun el profile nos dirigimos a su pagina correspondiente
                             case '1': // CAMARERO 
                                 header("Location: ../view/Camarero/buscarReserva.php");
@@ -46,10 +46,8 @@ class CamareroDao{
                                 header("Location: ../view/Administrador/adminHome.php");
                                 break;
                         }
-                        return true;
                     }else {
-                        $error = "Campos mal introducidos";
-                        header("Location: ../index.php?error=$error");
+                        return false;
                     }
                 } else { // Si el isuario esta bloqueado (0) o (!=1)
                     $error = "L'usuari es troba bloquejat actualment";

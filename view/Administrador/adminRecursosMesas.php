@@ -1,5 +1,11 @@
 <?php
-require_once "../../controller/recuperarSalas.php";
+session_start();
+if (!isset($_SESSION['camarero'])){
+    header('Location: ../../index.php');
+} else {
+    require_once "../../controller/recuperarSalas.php";
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,7 +22,8 @@ require_once "../../controller/recuperarSalas.php";
     <meta name="author" content="">
 
 	<link rel="stylesheet" href="../../css/home.css">
-	<link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/projecte2.css">
 
     <script src="../../js/modal.js"></script>
 </head>
@@ -57,13 +64,13 @@ require_once "../../controller/recuperarSalas.php";
                 </div>
             </div>
         </header>
-	</div><br><br><br><br>
+	</div>
 	<!-----------------------------------------------FIN MENU----------------------------------------->
 
 	<!-----------------------------------------------INICIO BANNER----------------------------------------->
     <div style="text-align: center; color: black;">
+        <button class="update" style="margin-left: 32.50%" onclick="abrirModal()">New Mesa</button><br>
         <h1>sala <?php echo $_POST['id_sala'] ?></h1>
-        <button class="new-mesa" onclick="abrirModal()">New Mesa</button>
 
         <!-- // Consultar las mesas y mostrar las mesas con opcion de eliminar -->
         <?php
@@ -77,7 +84,7 @@ require_once "../../controller/recuperarSalas.php";
 
             foreach ($mesas as $mesa) {
         ?>
-            <div>
+            <div class='three-column'>
                 <form action='../../controller/delSala.php' method='POST'>
                     <p>ID MESA:<?php echo $mesa['id_mesa'] ?>  </p>
                     <p>Capacidad: <?php echo $mesa['num_sillas_mesa'] ?> </p>

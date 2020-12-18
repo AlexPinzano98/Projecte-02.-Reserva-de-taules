@@ -1,5 +1,11 @@
 <?php
-require_once "../../controller/recuperarSalas.php";
+session_start();
+if (!isset($_SESSION['camarero'])){
+    header('Location: ../../index.php');
+} else {
+    require_once "../../controller/recuperarSalas.php";
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,7 +22,8 @@ require_once "../../controller/recuperarSalas.php";
     <meta name="author" content="">
 
 	<link rel="stylesheet" href="../../css/home.css">
-	<link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/projecte2.css">
 
     <script src="../../js/modal.js"></script>
 </head>
@@ -57,23 +64,24 @@ require_once "../../controller/recuperarSalas.php";
                 </div>
             </div>
         </header>
-	</div><br><br><br><br>
+	</div>
 	<!-----------------------------------------------FIN MENU----------------------------------------->
  
 	<!-----------------------------------------------INICIO BANNER----------------------------------------->
     <div style="text-align: center; color: black;">
+        <button class="update" style="margin-left: 32%" onclick="abrirModal()">New Sala</button><br>
         <h1>ADMINISTRAR RECURSOS</h1>
-        <button class="new-sala" onclick="abrirModal()">New Sala</button>
+        
 
         <?php 
         foreach ($salas as $sala) { ?>
-        <div style="border: 2px black solid;">
-            <p>ID: <b><?php echo $sala['id_sala'];?></b></p>
+        <div class='three-column'>
+            <p>SALA: <b><?php echo $sala['Nombre'];?></b></p>
             <p>NUM MESAS: <b><?php echo $sala['num_mesas']?></b></p>
             <p>NUM SILLAS: <b><?php echo $sala['num_sillas']?></b></p>
             <form action="../../controller/delSala.php" method="POST">
                 <input type="hidden" name="id_sala" value="<?php echo $sala['id_sala']?>">
-                <button class="delete">Eliminar</button>
+                <button style="margin-left: 15%;" class="delete">Eliminar</button>
             </form>
             <form action="./adminRecursosMesas.php" method="POST">
                 <input type="hidden" name="id_sala" value="<?php echo $sala['id_sala']?>">

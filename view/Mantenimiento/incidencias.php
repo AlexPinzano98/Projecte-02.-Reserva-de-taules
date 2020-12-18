@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!isset($_SESSION['camarero'])){
+    header('Location: ../../index.php');
+} 
+?>
 <!DOCTYPE html>
 <html lang="en">
 

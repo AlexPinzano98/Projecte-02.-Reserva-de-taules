@@ -1,5 +1,11 @@
-<?php
-require_once "../../controller/recuperarEmpleado.php";
+<?php 
+session_start();
+if (!isset($_SESSION['camarero'])){
+    header('Location: ../../index.php');
+} else {
+    require_once "../../controller/recuperarEmpleado.php";
+}
+
 //print_r($empleado);
 ?>
 <!DOCTYPE html>

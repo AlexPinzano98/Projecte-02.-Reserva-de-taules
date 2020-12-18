@@ -1,6 +1,11 @@
 <?php  
-// Aqui registranos al empleado 
-require_once "../../controller/searchReserva.php";
+session_start();
+if (!isset($_SESSION['camarero'])){
+    header('Location: ../../index.php');
+} else {
+    require_once "../../controller/searchReserva.php";
+}
+
 ?> 
 <!DOCTYPE html>  
 <html>

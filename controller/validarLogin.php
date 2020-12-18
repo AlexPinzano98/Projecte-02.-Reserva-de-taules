@@ -5,12 +5,7 @@ include '../model/camareroDAO.php';
 
 $admin = new Camarero($_POST['email'], md5($_POST['psswd']));
 $adminDAO = new CamareroDAO();
-if($adminDAO->login($admin)){
-  //echo 'Login realizado con exito, iniciamos sesion <br>'; 
-  header('Location: ../view/Administrador/adminRegistros.php');
-}else {
-  header("Location: ../index.php");
-}
+$adminDAO->login($admin);
 
 
 ?>

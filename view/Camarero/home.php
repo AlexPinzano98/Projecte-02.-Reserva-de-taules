@@ -1,6 +1,11 @@
 <?php
-//require_once '../../controller/validarConexion.php';
-require_once '../../services/conexion.php';
+session_start();
+if (!isset($_SESSION['camarero'])){
+    header('Location: ../../index.php');
+} else {
+    require_once '../../services/conexion.php';
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

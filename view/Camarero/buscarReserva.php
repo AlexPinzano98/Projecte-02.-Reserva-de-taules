@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!isset($_SESSION['camarero'])){
+    header('Location: ../../index.php');
+} 
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,7 +67,7 @@
         Tambien mostrar todos los usuarios con boton de eliminar y de modificar
         La opcion de modificar abre otro modal
      -->
-    <div class="form modal-body fondor">
+    <div class="modal-body fondor">
         <h1>CREAR REGISTRO</h1>
         <form action="./crearReserva.php" method="POST" id="formulario" onsubmit="return validacionReserva()">
             <div class="input-contenedor">	<!-- Campo: FECHA -->
@@ -74,7 +80,7 @@
             </div>
             <div class="input-contenedor">	<!-- Campo: Hora -->
                 <label for="hora">Hora de la reserva</label>
-                <select name="hora">
+                <select id="hora" name="hora">
                     <option value="12:00" selected>12:00-13:00</option> 
                     <option value="13:00">13:00-14:00</option>
                     <option value="14:00">14:00-15:00</option>

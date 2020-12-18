@@ -32,6 +32,7 @@ window.onclick = function(event) { // Cerrar el modal al clicar fuera de el
     modal.style.display = "none";
   }
 }
+
 /* VALIDAR FORMULARIO */
 function validacionForm() {
   var name = document.getElementById('name').value;
@@ -50,19 +51,21 @@ function validacionForm() {
 }
 
 function validacionReserva() {
-  var fecha = document.getElementById('fecha').value;
   var capacidad = document.getElementById('capacidad').value;
+  var fecha = document.getElementById('fecha').value;
+  var hora = document.getElementById('hora').value;
+  var our = hora.split(":");
 
-  console.log(fecha.getMonth())
-
-  return false;
+  var fechaA = new Date(); // Capturamos la fecha actual
+  var fechaR = new Date(fecha); // Fecha introducida en el form
+  
   // Comprovamos que los campos no esten vacios
   if((fecha=='')||(capacidad=='')){
       document.getElementsByClassName('msg-error')[0].innerHTML = "Introduce todos los datos";
-  } else if((pas1 != pas2)){ // Comprovamos que la fecha no sea real
-    
-
-      document.getElementsByClassName('msg-error')[0].innerHTML = "La fecha es anterior a la actual";
+  } else if((fechaA.getMonth() > fechaR.getMonth())||(fechaA.getDate() > fechaR.getDate())||(fechaA.getFullYear() > fechaR.getFullYear())){ // Comprovamos que la fecha no sea real
+      document.getElementsByClassName('msg-error')[0].innerHTML = "Fecha anterior a la actual";
+  } else if((our[0] < fechaA.getHours())&&(our[1] < fechaA.getMinutes())&&(fechaA.getMonth() == fechaR.getMonth())&&(fechaA.getDate() == fechaR.getDate())&&(fechaA.getFullYear() == fechaR.getFullYear())){
+      document.getElementsByClassName('msg-error')[0].innerHTML = "Hora anterior a la actual";
   } else { // 
       return true;
   }
