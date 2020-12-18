@@ -367,3 +367,12 @@ input.campoform {
     padding-top: 70px;
   }
 }
+
+
+.div-msg{
+  text-align: center;
+  color: red;
+}
+.msg-error{
+  color: red;
+}

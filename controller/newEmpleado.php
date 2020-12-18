@@ -1,11 +1,14 @@
 <?php 
 include '../model/adminDAO.php';
-echo $_POST['name']." , ".$_POST['email']." , ".$_POST['password']." , ".$_POST['perfil'];
+$name = $_POST['name'];
+$email = $_POST['email'];
+$psswd = $_POST['password'];
+$perfil = $_POST['perfil'];
+
 
 // TODO: AÑADIR AL EMPLEADO
-$empleado = $_POST['id_emp']; 
 
 $adminDAO = new AdminDAO();
-$adminDAO->registrarEmpleado();
+$adminDAO->registrarEmpleado($name,$email,$psswd,$perfil);
 
 ?>

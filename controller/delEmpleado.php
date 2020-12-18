@@ -4,6 +4,6 @@ include '../model/adminDAO.php';
 $empleado = $_POST['id_emp']; 
 
 $adminDAO = new AdminDAO();
-$adminDAO->deleteEmpleado($empleado);
+$adminDAO->deleteEmpleado($empleado); 
 
 ?>

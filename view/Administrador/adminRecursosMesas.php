@@ -2,7 +2,10 @@
 session_start();
 if (!isset($_SESSION['camarero'])){
     header('Location: ../../index.php');
+} else {
+    require_once "../../controller/recuperarSalas.php";
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,12 +19,12 @@ if (!isset($_SESSION['camarero'])){
     <!-- Site Metas -->
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <meta name="author" content=""> 
+    <meta name="author" content="">
 
 	<link rel="stylesheet" href="../../css/home.css">
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/projecte2.css">
- 
+
     <script src="../../js/modal.js"></script>
 </head>
 <body id="site-header" style="	background:url(../../img/pollo.gif) no-repeat center top;
@@ -68,44 +71,59 @@ if (!isset($_SESSION['camarero'])){
 	<!-----------------------------------------------FIN MENU----------------------------------------->
 
 	<!-----------------------------------------------INICIO BANNER----------------------------------------->
-    <!-- Para los registros hacer un modal para crear uno
-        Tambien mostrar todos los usuarios con boton de eliminar y de modificar
-        La opcion de modificar abre otro modal
-     -->
-    <div class="form modal-body contenedor">
-        <h1>CREAR REGISTRO</h1>
-        <form action="../../controller/newEmpleado.php" method="POST" id="formulario" onsubmit="return validacionForm()">
-            <div class="input-contenedor">	<!-- Campo: NOM -->
-                <label for="nom">Nombre:</label> 
-                <input type="text" name="name" id="name">
-            </div>
-            <div class="input-contenedor">	<!-- Campo: EMAIL -->
-                <label for="correo">Email:</label>
-                <input type="email" name="email" id="email">
-            </div>
-            <div class="input-contenedor">	<!-- Campo: PASSWORD 1 -->
-                <label for="passwd">Password:</label>
-                <input type="password" name="password" id="password">
-            </div>
-            <div class="input-contenedor">	<!-- Campo: PASSWORD 2 -->
-                <label for="passwd2">Password:</label>
-                <input type="password" name="password2" id="password2">
-            </div>
-            <div class="input-contenedor">	<!-- Campo: Profile -->
-                <label for="perfil">Perfil</label>
-                <select name="perfil">
-                    <option value="1" selected>Camarero</option> 
-                    <option value="2">Mantenimiento</option>
-                    <option value="3">Administrador</option>
-                </select>
-            </div>
-            <button type="submit">Enviar</button>
-            <div class="div-msg">
-                <p class="msg-error"></p>
-            </div>
-        </form>
-    </div>
-<!-----------------------------------------------FIN DIV MESAS----------------------------------------->
+    <div style="text-align: center; color: black;">
+        <button class="update" style="margin-left: 32.50%" onclick="abrirModal()">New Mesa</button><br>
+        <h1>sala <?php echo $_POST['id_sala'] ?></h1>
 
+        <!-- // Consultar las mesas y mostrar las mesas con opcion de eliminar -->
+        <?php
+            $sala = $_POST['id_sala'];
+            $query = "SELECT * FROM tbl_mesas
+            WHERE id_sala='$sala' ";
+
+            $sentencia = $pdo->prepare($query);
+            $sentencia->execute();
+            $mesas = $sentencia->fetchAll();
+
+            foreach ($mesas as $mesa) {
+        ?>
+            <div class='three-column'>
+                <form action='../../controller/delSala.php' method='POST'>
+                    <p>ID MESA:<?php echo $mesa['id_mesa'] ?>  </p>
+                    <p>Capacidad: <?php echo $mesa['num_sillas_mesa'] ?> </p>
+                    <img src="../../img/mesa1.png" style="width: 15%;" /> <br>
+                    <input id="id_sala" name="id_sala" type="hidden" value="<?php echo $mesa['id_mesa'] ?>"> <br>
+                    <button type='submit'>DELETE</button>
+                </form>
+            </div>
+        <?php 
+            }
+        ?> 
+
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Nueva mesa</h2>
+            </div>
+            <div class="modal-body">
+                <form action="../../controller/crearMesa.php" method="POST">
+                    Id de la sala: <br>
+                    <input id="id_sala" name="id_sala" type="text" value="<?php echo $_POST['id_sala'] ?>" readonly> <br>
+                    Numero de sillas para la mesa <br>
+                    <select id="capacidad" name="capacidad">
+                        <option value="2" selected>2</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                    </select> <br>
+                    <button type="submit">CREAR</button>
+                </form>
+            </div>
+        </div> <!-- Fin Modal content -->
+    </div><!-- Fin The Modal -->
 </body>
 </html>

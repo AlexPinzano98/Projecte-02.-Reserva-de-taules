@@ -7,7 +7,7 @@
 	<script src="./js/code.js"></script>
 	<link rel="stylesheet" type="text/css" href="./css/index.css">
 </head>
-<!-- <body style="background-color: #666666;">
+<body style="background-color: #666666;">
 	<div class="principal-form">
 		<div class="content-form">
 			<div class="row-form">
@@ -36,10 +36,21 @@
 						</div>
 					</div>
 
+					<div class="div-msg">
+						<p class="msg-error">
+						<?php
+							if (isset($_GET['error'])) {
+							echo $_GET['error'];
+							}
+						?>
+						</p>
+					</div>
+
 					<div class="container-login">
 					<input type="submit" class="login-boton" id="ingresar" value="Ingresar">
 					</div>
 					<div id="message"></div>
+					
 				</form>
 
 				<div class="imagen-fondo-login" style="background-image: url('./img/bg_login.jpg');">
@@ -47,8 +58,8 @@
 			</div>
 		</div>
 	</div> 
-</body> -->
-<body>
+</body>
+<!-- <body>
 	<div style="text-align: center;">
 		<ul>
 			<li>
@@ -64,6 +75,6 @@
 			</li>
 		</ul>
 	</div>
-</body>
+</body> -->
 </html>
 

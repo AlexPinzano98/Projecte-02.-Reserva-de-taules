@@ -1,8 +1,8 @@
 CREATE DATABASE 2021_pinzanoalex;
-USE bd_reserva_mesa;
+USE 2021_pinzanoalex;
 
 CREATE TABLE tbl_camareros (
-    id_camarero int (11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id_empleado int (11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     Name varchar (100) NOT NULL,
     Email varchar (255) NOT NULL,
     Passwd varchar (50) NOT NULL,
@@ -17,6 +17,7 @@ CREATE TABLE tbl_perfil (
 
 CREATE TABLE tbl_salas (
     id_sala int (11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    Nombre varchar (100) NOT NULL,
     num_mesas int (2) NOT NULL,
     num_sillas int (2) NOT NULL
 );
@@ -71,10 +72,10 @@ VALUES	("Admin","admin@admin.com","81dc9bdb52d04dc20036dbd8313ed055","1","3"),
 ("Dani","dani@gmail.com","81dc9bdb52d04dc20036dbd8313ed055","1","2"),
 ("Carlos","carlos@gmail.com","81dc9bdb52d04dc20036dbd8313ed055","1","1");
 
-INSERT INTO tbl_salas (num_mesas,num_sillas)	
-VALUES	("6","24"),
-("6","24"),
-("6","24") ;
+INSERT INTO tbl_salas (Nombre,num_mesas,num_sillas)	
+VALUES	("GOLD","6","24"),
+("SILVER","6","24"),
+("BRONZE","6","24") ;
 
 INSERT INTO tbl_mesas (id_sala,num_sillas_mesa,disponibilidad_mesa)
 VALUES ("1","2","disponible"),("1","2","disponible"),("1","4","disponible"),

@@ -1,5 +1,8 @@
 <?php
-//require_once '../../controller/validarConexion.php';
+session_start();
+if (!isset($_SESSION['camarero'])){
+    header('Location: ../../index.php');
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,9 +41,12 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
+                                <div class="session">
+                                <?php echo "Welcome: ".$_SESSION['camarero']?>
+                                </div>
                                 <div class="logo">
                                     <a class="navbar-brand js-scroll-trigger logo-header" href="#">
-                                    <img src="../img/logo.png" alt="">
+                                    <img src="../../img/logo.png" alt="">
                                     </a>
                                 </div>
                             </div>
