@@ -1,10 +1,10 @@
 <?php 
 include '../model/adminDAO.php';
 // TODO: ELIMINAR AL EMPLEADO
- echo "PENE";
-// $empleado = $_POST['id_emp']; 
+$empleado = $_POST['id_emp']; 
+echo $empleado;
 
-// $adminDAO = new AdminDAO();
-// $adminDAO->deleteEmpleado($empleado);
+$adminDAO = new AdminDAO();
+$adminDAO->changeStatus($empleado);
 
 ?>

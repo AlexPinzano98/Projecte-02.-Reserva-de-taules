@@ -9,7 +9,7 @@ if($adminDAO->login($admin)){
   //echo 'Login realizado con exito, iniciamos sesion <br>'; 
   header('Location: ../view/Administrador/adminRegistros.php');
 }else {
-  header('Location: ../index.php');
+  header("Location: ../index.php");
 }
 
 

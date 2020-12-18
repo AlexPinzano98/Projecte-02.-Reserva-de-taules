@@ -32,3 +32,39 @@ window.onclick = function(event) { // Cerrar el modal al clicar fuera de el
     modal.style.display = "none";
   }
 }
+/* VALIDAR FORMULARIO */
+function validacionForm() {
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var pas1 = document.getElementById('password').value;
+  var pas2 = document.getElementById('password2').value;
+  // Comprovamos que los campos no esten vacios
+  if((name=='')||(email=='')||(pas1=='')||(pas2=='')){
+      document.getElementsByClassName('msg-error')[0].innerHTML = "Introduce todos los datos";
+  } else if((pas1 != pas2)){ // Comprovamos que las contraseñas sean iguales
+      document.getElementsByClassName('msg-error')[0].innerHTML = "Las contraseñas no coinciden";
+  } else { // 
+      return true;
+  }
+  return false;
+}
+
+function validacionReserva() {
+  var fecha = document.getElementById('fecha').value;
+  var capacidad = document.getElementById('capacidad').value;
+
+  console.log(fecha.getMonth())
+
+  return false;
+  // Comprovamos que los campos no esten vacios
+  if((fecha=='')||(capacidad=='')){
+      document.getElementsByClassName('msg-error')[0].innerHTML = "Introduce todos los datos";
+  } else if((pas1 != pas2)){ // Comprovamos que la fecha no sea real
+    
+
+      document.getElementsByClassName('msg-error')[0].innerHTML = "La fecha es anterior a la actual";
+  } else { // 
+      return true;
+  }
+  return false;
+}

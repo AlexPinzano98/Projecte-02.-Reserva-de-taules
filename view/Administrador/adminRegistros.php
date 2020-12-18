@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,9 +13,10 @@
     <meta name="author" content=""> 
 
 	<link rel="stylesheet" href="../../css/home.css">
-	<link rel="stylesheet" href="../../css/bootstrap.min.css">
-
-    <script src="../js/changeImg.js"></script>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/projecte2.css">
+ 
+    <script src="../../js/modal.js"></script>
 </head>
 <body id="site-header" style="	background:url(../../img/pollo.gif) no-repeat center top;
 	background-attachment:fixed;
@@ -55,7 +55,7 @@
                 </div>
             </div>
         </header>
-	</div><br><br><br><br>
+	</div>
 	<!-----------------------------------------------FIN MENU----------------------------------------->
 
 	<!-----------------------------------------------INICIO BANNER----------------------------------------->
@@ -63,47 +63,37 @@
         Tambien mostrar todos los usuarios con boton de eliminar y de modificar
         La opcion de modificar abre otro modal
      -->
-    <div style="text-align: center; color: black;">
+    <div class="form modal-body contenedor">
         <h1>CREAR REGISTRO</h1>
-        <form action="../../controller/newEmpleado.php" method="POST" class="formulario" id="formulario" onsubmit="return validacionForm()">
-        <div>	<!-- Campo: NOM -->
-            <label for="nom">Nombre</label> 
-            <div>
-            <input type="text" name="name" id="name" placeholder="Nombre...">
+        <form action="../../controller/newEmpleado.php" method="POST" id="formulario" onsubmit="return validacionForm()">
+            <div class="input-contenedor">	<!-- Campo: NOM -->
+                <label for="nom">Nombre:</label> 
+                <input type="text" name="name" id="name">
             </div>
-        </div>
-        <div>	<!-- Campo: EMAIL -->
-            <label for="correo">Email</label>
-            <div>
-            <input type="email" name="email" id="email" placeholder="Email...">
+            <div class="input-contenedor">	<!-- Campo: EMAIL -->
+                <label for="correo">Email:</label>
+                <input type="email" name="email" id="email">
             </div>
-        </div>
-        <div>	<!-- Campo: PASSWORD 1 -->
-            <label for="passwd">Password</label>
-            <div>
-            <input type="password" name="password" id="password">
+            <div class="input-contenedor">	<!-- Campo: PASSWORD 1 -->
+                <label for="passwd">Password:</label>
+                <input type="password" name="password" id="password">
             </div>
-        </div>
-        <div>	<!-- Campo: PASSWORD 2 -->
-            <label for="passwd2">Password 2</label>
-            <div>
-            <input type="password" name="password2" id="password2">
+            <div class="input-contenedor">	<!-- Campo: PASSWORD 2 -->
+                <label for="passwd2">Password:</label>
+                <input type="password" name="password2" id="password2">
             </div>
-        </div>
-        <div>	<!-- Campo: Profile -->
-            <label for="perfil">Perfil (1-3)</label>
-            <div>
-            <select name="perfil">
-                <option value="1" selected>1 - Camarero</option> 
-                <option value="2">2 - Mantenimiento</option>
-                <option value="3">3 - Administrador</option>
-            </select>
+            <div class="input-contenedor">	<!-- Campo: Profile -->
+                <label for="perfil">Perfil</label>
+                <select name="perfil">
+                    <option value="1" selected>Camarero</option> 
+                    <option value="2">Mantenimiento</option>
+                    <option value="3">Administrador</option>
+                </select>
             </div>
-        </div>
-       
-        <div> <!-- Boton de enviar -->
             <button type="submit">Enviar</button>
-        </div>
+            <div class="div-msg">
+                <p class="msg-error"></p>
+            </div>
         </form>
     </div>
 <!-----------------------------------------------FIN DIV MESAS----------------------------------------->

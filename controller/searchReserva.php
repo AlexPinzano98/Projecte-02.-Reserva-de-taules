@@ -2,7 +2,6 @@
 // Aqui registranos al empleado
 require_once "../../services/conexion.php";
 // Recogemos los datos enviados del formulario
-echo "<br><br><br><br><br>";
 $fecha     = $_POST['fecha'];
 $capacidad = $_POST['capacidad'];
 $hora    = $_POST['hora'];

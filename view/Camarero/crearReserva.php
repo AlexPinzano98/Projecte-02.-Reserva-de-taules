@@ -1,5 +1,5 @@
 <?php  
-// Aqui registranos al empleado
+// Aqui registranos al empleado 
 require_once "../../controller/searchReserva.php";
 ?> 
 <!DOCTYPE html>  
@@ -17,9 +17,9 @@ require_once "../../controller/searchReserva.php";
     <meta name="author" content="">
 
 	<link rel="stylesheet" href="../../css/home.css">
-	<link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/projecte2.css">
 
-    <script src="../js/changeImg.js"></script>
 </head>
 <body id="site-header" style="	background:url(../../img/pollo.gif) no-repeat center top;
 	background-attachment:fixed;
@@ -61,19 +61,16 @@ require_once "../../controller/searchReserva.php";
 	</div>
 	<!-----------------------------------------------FIN MENU----------------------------------------->
 
-	<!-----------------------------------------------INICIO BANNER----------------------------------------->
-    <!-- Para los registros hacer un modal para crear uno
-        Tambien mostrar todos los usuarios con boton de eliminar y de modificar
-        La opcion de modificar abre otro modal
-     -->
-    <div style="text-align: center; color: black;">
-        <h1>MESAS DISPONIBLES</h1>
-        <div style="background-color: cyan;">
-        <p>Dia: <?php echo $fecha ?></p>
-        <p>Capacidad: <?php echo $capacidad ?></p>
-        <p>Hora: <?php echo $hora ?></p>
-        <p>Sala: <?php echo $sala ?></p>
-    </div>
+	<!-----------------------------------------------INICIO RESERVAS----------------------------------------->
+    <div> 
+        <div class="fecha-busq">
+            <p>Dia: <?php echo $fecha ?></p>
+            <p>Capacidad: <?php echo $capacidad ?></p>
+            <p>Hora: <?php echo $hora ?></p>
+            <p>Sala: <?php echo $sala ?></p>
+            <h1>MESAS DISPONIBLES</h1>
+        </div>
+
     <?php
     foreach ($mesas as $mesa) {
     $id = $mesa['id_mesa'];
@@ -85,15 +82,15 @@ require_once "../../controller/searchReserva.php";
 
     $sentencia = $pdo->prepare($query);
     $sentencia->execute();
-    $reservas = $sentencia->rowCount();
+    $reservas = $sentencia->rowCount(); 
 
     // Comprovamos si no existen reservas
     if ($reservas == 0) {    ?>
-    <div>
+    <div class='three-column'>
         <form action='../../controller/hacerReserva.php' method='POST'>
-            <p>Mesa disponible:<?php echo $mesa['id_mesa'] ?>  </p>
+            <p>ID mesa: <?php echo $mesa['id_mesa'] ?>  </p>
             <p>Capacidad: <?php echo $mesa['num_sillas_mesa'] ?> </p>
-            <img src="../../img/mesa1.png" style="width: 15%;" /> <br>
+            <img src="../../img/mesa1.png" style="width: 15%;" /> <br><br>
             <input id='fecha' name='fecha' type='hidden' value='<?php echo $fecha ?>'> 
             <input id='hora' name='hora' type='hidden' value='<?php echo $hora ?>'> 
             <input id='id_mesa' name='id_mesa' type='hidden' value='<?php echo $mesa['id_mesa'] ?>'>     

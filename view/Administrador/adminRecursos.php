@@ -59,7 +59,7 @@ require_once "../../controller/recuperarSalas.php";
         </header>
 	</div><br><br><br><br>
 	<!-----------------------------------------------FIN MENU----------------------------------------->
-
+ 
 	<!-----------------------------------------------INICIO BANNER----------------------------------------->
     <div style="text-align: center; color: black;">
         <h1>ADMINISTRAR RECURSOS</h1>

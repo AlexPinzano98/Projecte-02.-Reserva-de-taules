@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.row h1 {
+  text-align: center;
+  padding-top: 6%;
+}
+.row {
+  color: white;
+}
+.three-column {
+  float: left;
+  width: 30%;
+  text-align: center;
+  margin-left: 2%;
+  margin-bottom: 1%;
+  border: 2px black solid;
+  background-color: black;
+  color: white;
+}
+
+/* Estilos del modal */
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 30%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  text-align: center;
+}
+.contenedor {
+  background-image: url(https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-background-wood-grain-background-log-color-grain-backgroundlog-color-image_84848.jpg);
+}
+.fondor {
+  background-image: url(https://img.freepik.com/foto-gratis/textura-tela-blanca-fondo_35652-585.jpg?size=626&ext=jpg);
+}
+
+input[type="text"],input[type="email"],input[type="password"],
+input[type="date"],input[type="number"],select{
+  width: 80%;
+  font-size: 20px;
+  padding: 10px;
+  border: none;
+  background-color:transparent;
+  font-weight: bolder;
+  text-align: center;
+}
+button[type="submit"]{
+  border: none;
+  width: 100%;
+  font-size: 20px;
+  background-color: orange;
+  color:  white;
+}
+.input-contenedor{
+  margin-bottom: 15px;
+  border: 1px solid black;
+  width: 100%;
+
+}
+.icon {
+  min-width: 50px;
+  text-align: center;
+}
+p {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.acciones:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+.delete{
+  border: none;
+  width: 33.33%;
+  font-size: 20px;
+  background-color: black;
+  color:  white;
+  float: left;
+}
+.update{
+  border: none;
+  width: 33.33%;
+  font-size: 20px;
+  background-color: white;
+  color:  black;
+  float: left;
+}
+.button{
+  border: none;
+  width: 33.33%;
+  font-size: 20px;
+  background-color: blue;
+  color:  white;
+  float: left;
+}
+.formulario{
+  width: 30%;
+  background-color: black;
+  color: white;
+}
+.tipo{
+  width: 100%;
+}
+.form{
+  width: 40%;
+  height: 75%;
+  background-color: white;
+  margin: 0 30%;
+  margin-top: 8%;
+  text-align: center;
+  color: black;
+}
+.div-msg {
+  background-color: red;
+  width: 70%;
+  margin-left: 15%;
+}
+.msg-error {
+  color: white;
+}
+.msg-error1 {
+  color: black;
+}
+
+.two .form-group button {
+  background: #FFFFFF;
+  color: #4285F4;
+}
+label {
+  font-size: 15px;
+}
+
+.fecha-busq{
+  background-color: transparent;
+  text-align: center;
+  width: 40%;
+  margin: 0 30%;
+  color: white
+}
