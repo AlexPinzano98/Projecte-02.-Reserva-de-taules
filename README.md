@@ -1,5 +1,7 @@
 # Projecte-02.-Reserva-de-taules
 
+La base de datos se encuentra en la carpeta bd
+
 Existen 3 tipos de empleado:
 - Empleado Camarero:
 random@random.com - 1234
