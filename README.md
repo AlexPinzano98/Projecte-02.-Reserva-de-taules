@@ -1,6 +1,7 @@
 # Projecte-02.-Reserva-de-taules
 
-La base de datos se encuentra en la carpeta bd
+La base de datos final es: 2021_pinzanoalex.sql
+La podéis encontrar en la caarpeta db
 
 Existen 3 tipos de empleado:
 - Empleado Camarero:
